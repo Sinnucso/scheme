@@ -1,0 +1,18 @@
+ 1 2 (define firsts 
+ 	 (lambda (l)
+    (cond 
+      ((null? l) (quote()))
+      (else 
+        (cons (car (car l)
+          (firsts (cdr l)) ))))))
+(define insertR
+  (lambda (new old lat)
+    (cond
+      ((null? lat)(quote()))
+      (else
+        (cond
+          ((eq? (car lat) old)(cons(car lat)(cons new (cdr lat))))
+          (else (cons (car lat)(insertR new old lat))) )))))
+1(+ 1 2)2
+1 (+ 1 2) 2
+2 
